@@ -30,13 +30,10 @@
             <button onclick="hideControls()">Hide Controls</button>
         </div>
         <div>
-            <strong>Background Color:</strong>
-            <button onclick="setBackgroundColor('white')">White</button>
-            <button onclick="setBackgroundColor('lightblue')">Blue</button>
-            <button onclick="setBackgroundColor('lightgray')">Gray</button>
-            <button onclick="setBackgroundColor('beige')">Beige</button>
-            <button onclick="setBackgroundColor('lightgreen')">Green</button>
+            <strong>Background:</strong>
+            <input type="color" id="bgColorPicker" value="#ffffff" onchange="setBackgroundColor(this.value)">
         </div>
+
         <div class="slider-container">
             <strong>Objects:</strong>
             <input type="range" id="objectSlider" min="1" max="10" value="3">
