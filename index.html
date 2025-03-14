@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Game with Custom Objects</title>
+    <style>
+        body { margin: 0; overflow: hidden; }
+        canvas { display: block; position: absolute; top: 0; left: 0; }
+        #controls {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .slider-container { display: flex; align-items: center; gap: 10px; }
+        .button-container { display: flex; gap: 10px; }
+    </style>
+</head>
+<body>
+    <div id="controls">
+        <div class="button-container">
+            <button onclick="toggleFullScreen()">Full Screen</button>
+            <button onclick="hideControls()">Hide Controls</button>
+        </div>
+        <div>
+            <strong>Background Color:</strong>
+            <button onclick="setBackgroundColor('white')">White</button>
+            <button onclick="setBackgroundColor('lightblue')">Blue</button>
+            <button onclick="setBackgroundColor('lightgray')">Gray</button>
+            <button onclick="setBackgroundColor('beige')">Beige</button>
+            <button onclick="setBackgroundColor('lightgreen')">Green</button>
+        </div>
+        <div class="slider-container">
+            <strong>Objects:</strong>
+            <input type="range" id="objectSlider" min="1" max="10" value="3">
+            <span id="objectCountLabel">3</span>
+        </div>
+        <div class="slider-container">
+            <strong>Speed:</strong>
+            <input type="range" id="speedSlider" min="10" max="100" value="50">
+            <span id="speedLabel">50</span>
+        </div>
+        <div>
+            <strong>Upload Image:</strong>
+            <input type="file" id="imageUpload" accept="image/*">
+            <button id="clearImageButton">Clear Image</button>
+        </div>
+    </div>
+    <canvas id="gameCanvas"></canvas>
+    <script src="script.js"></script>
+</body>
+</html>
